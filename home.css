@@ -1,0 +1,80 @@
+body{
+    font-size: 15px;
+}
+.sectionTitle{
+    border-left: 2px solid #D43C33;
+    font-size: 17px;
+    line-height: 1;
+    padding-left: 8px;
+    margin: 20px 0 8px;
+}
+/*.sticky{*/
+    /*position: fixed;*/
+    /*top: 0;*/
+    /*left: 0;*/
+    /*width: 100%;*/
+    /*z-index: 1;*/
+    /*background: white;*/
+/*}*/
+section.topbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #D43C33;
+    padding: 17px 10px;
+}
+section.topbar .logo>svg{
+    width: 142px;height: 25px;
+    vertical-align: top;
+}
+section.topbar > a{
+    color: white;
+    display: inline-block;
+    padding: 5px 11px;
+    line-height: 20px;
+    position: relative;
+    font-size: 15px;
+}
+section.topbar > a::after{
+    content:'';
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    border: 1px solid rgba(255,255,255,.7);
+    border-radius: 35%/100%;
+    transform: scale(0.5);
+    transform-origin: 0 0;
+}
+
+/* tabs */
+.tabs{
+    display: flex;
+    border-bottom: 1px solid rgba(204,204,204,.3);
+}
+.tabs>li{
+    width: 33.333333%;
+    text-align: center;
+    line-height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tabs>li>.text{
+    padding: 10px 5px;
+    position: relative;
+    top: 1px;
+}
+.tabs >li.active{
+    color: #D43C33;
+}
+.tabs >li.active>.text::after{
+    content: '';
+    position: absolute;
+    height: 2px;
+    background: #D43C33;
+    bottom: 1px;
+    left: 0;
+    width: 100%;
+}
