@@ -2,20 +2,29 @@ body{
     font-size: 15px;
 }
 .sectionTitle{
-    border-left: 2px solid #D43C33;
     font-size: 17px;
     line-height: 1;
     padding-left: 8px;
     margin: 20px 0 8px;
+    color: rgb(51, 51, 51);
+    position:relative;
 }
-/*.sticky{*/
-    /*position: fixed;*/
-    /*top: 0;*/
-    /*left: 0;*/
-    /*width: 100%;*/
-    /*z-index: 1;*/
-    /*background: white;*/
-/*}*/
+.sectionTitle::before{
+    content:'';
+    position:absolute;
+    border-left: 2px solid #D43C33;
+    height: 16px;
+    top: -1px;
+    left: 0
+}
+.sticky{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    background: white;
+}
 section.topbar{
     display: flex;
     justify-content: space-between;
@@ -74,20 +83,36 @@ section.topbar > a::after{
     position: absolute;
     height: 2px;
     background: #D43C33;
-    bottom: 1px;
+    bottom: 0;
     left: 0;
     width: 100%;
 }
 
+ol.tabContent{
+    margin-top:104px;
+}
 ol.tabContent>li{
     display: none;
 }
 ol.tabContent>li.active{
     display: block;
 }
+.noCollapse::before{
+    content:'';
+    display: table;
+}
+.noCollapse::after{
+    content:'';
+    display: table;
+}
+.loading-img {
+    text-align: center;
+}
+.loading-img img{
+    vertical-align: middle;
+}
 
 section.playLists{
-
 }
 section.playLists > ol.songs{
     display: flex;
@@ -114,8 +139,6 @@ section.playLists > ol.songs > li img{
     width: 100%;
 }
 
-
-
 section.art{
     padding-top: 69px;
     padding-bottom: 18px;
@@ -132,7 +155,7 @@ section.art .link-wrapper > .openapp{
     border: 1px solid;
     line-height: 38px;
     font-size: 16px;
-    padding: 0 66px;
+    width:80%;
     border-radius: 20px;
     color:#D43C33;
     margin-top: 10px;
@@ -146,3 +169,37 @@ section.art >p{
 
 }
 
+.page-2 .hot{
+
+}
+.hottop{
+    position: relative;
+    padding-top: 38.9%;
+    background-size: contain;
+    background-image: url(//i.loli.net/2017/08/27/59a2ba0edd1dc.jpg);
+}
+.hottop >.hotopct{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 20px;
+    background: rgba(0,0,0,.2);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+.hotopct >.hoticon{
+    width: 142px;
+    height: 67px;
+    background: transparent url(//i.loli.net/2017/08/24/599db480dee4c.png) no-repeat -24px -30px;
+    background-size: 166px 97px;
+}
+.hotopct >.hottime{
+    margin-top: 10px;
+    color: hsla(0,0%,100%,.8);
+    font-size: 12px;
+    transform: scale(.91);
+    transform-origin: left top;
+}
