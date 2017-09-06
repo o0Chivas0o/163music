@@ -5,7 +5,6 @@ $('.tabs').on('click','li',function(e){
     $('.tabContent').children().eq(index).addClass('active').siblings().removeClass('active')
 });
 
-
 var APP_ID = 'Eix3vKYRx3siO2vV8s30yAPG-gzGzoHsz';
 var APP_KEY = '24qwRAbG2s0ei8lLEwd8z1wi';
 
@@ -46,3 +45,25 @@ query.find().then(function (results) {
 });
 
 
+$('input#search').on('input',function (e) {
+    let $input = $(e.currentTarget)
+    let value = $input.val().trim()
+    if(value===''){return}
+    var query = new AV.Query('Song');
+    query.contains('name', value);
+    query.find().then(function(results){
+        $('#searchResult').empty()
+        $('div#loading-img').remove()
+        if(results.length === 0){
+            $('#searchResult').html('暂无搜索结果')
+        }else{
+            for(var i=0; i<results.length; i++){
+                let song = results[i].attributes;
+                let li = `
+                    <li data-id="${song.objectId}"> ${song.name} - ${song.singer} </li>
+                    `
+                $('#searchResult').append(li)
+            }
+        }
+    })
+})
