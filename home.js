@@ -53,7 +53,6 @@ $('input#search').on('input',function (e) {
     query.contains('name', value);
     query.find().then(function(results){
         $('#searchResult').empty();
-        $('div#loading-img').remove();
         if(results.length === 0){
             $('#searchResult').html('暂无搜索结果')
         }else{
