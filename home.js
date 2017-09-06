@@ -46,14 +46,14 @@ query.find().then(function (results) {
 
 
 $('input#search').on('input',function (e) {
-    let $input = $(e.currentTarget)
-    let value = $input.val().trim()
+    let $input = $(e.currentTarget);
+    let value = $input.val().trim();
     if(value===''){return}
     var query = new AV.Query('Song');
     query.contains('name', value);
     query.find().then(function(results){
-        $('#searchResult').empty()
-        $('div#loading-img').remove()
+        $('#searchResult').empty();
+        $('div#loading-img').remove();
         if(results.length === 0){
             $('#searchResult').html('暂无搜索结果')
         }else{
@@ -61,9 +61,9 @@ $('input#search').on('input',function (e) {
                 let song = results[i].attributes;
                 let li = `
                     <li data-id="${song.objectId}"> ${song.name} - ${song.singer} </li>
-                    `
+                    `;
                 $('#searchResult').append(li)
             }
         }
     })
-})
+});
