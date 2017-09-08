@@ -207,6 +207,7 @@ $('.hotResearch> ul').on('click', 'li', function (e) {
     var query = AV.Query.or(query1, query2);
     $('.hotResearch').hide();
     $('.u-svg-empty').addClass('active');
+    $('#searchResult').empty();
     query.find().then(function (results){
         for (var i = 0; i<results.length; i++){
             $('#hot-list').empty();
@@ -249,7 +250,8 @@ $('#searchResult').on('click','li',function() {
     $('.searchContent').hide();
     query.find().then(function (results) {
         for (var i = 0; i < results.length; i++) {
-            $('#searchResult').hide()
+            $('#searchResult').hide();
+            $('#searchResult').empty();
             let song = results[i].attributes;
             let li = `
                         <li>
@@ -276,13 +278,8 @@ $('#searchResult').on('click','li',function() {
             $('#hot-list').append(li)
         }
     }, function (error) {
-        console.log(error)
     })
 });
-
-
-
-
 
 /*热门歌曲列表*/
 $('.hot-list > ol').on('click', 'li', function () {
@@ -292,6 +289,7 @@ $('.hot-list > ol').on('click', 'li', function () {
 
 //封装hot
 var hot = function () {
+     $('#searchResult').empty();
      $('.hot-list').hide();
      $('.hotResearch').hide();
      $('.u-svg-empty').addClass('active');
