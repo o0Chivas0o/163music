@@ -281,6 +281,9 @@ section.art >p{
     display: flex;
     padding-left: 10px;
 }
+.hotcont >ol >li >a .number{
+    font-family: Helvetica, sans-serif, monospace
+}
 .hotcont >ol >li:nth-child(1) > a > .number,
 .hotcont >ol >li:nth-child(2) > a > .number,
 .hotcont >ol >li:nth-child(3) > a > .number{
@@ -446,14 +449,14 @@ input {
 .close .u-svg-empty.active{
     display: inline-block;
 }
-.searchPage > .searchContent{
+.searchPage .searchContent{
     display: none;
 }
-.searchPage > .searchContent.active{
+.searchPage .searchContent.active{
     border-bottom:1px solid #e8e8e8;
     display: block;
 }
-.searchPage > .searchContent > h3{
+.searchPage .searchContent > h3{
     position: relative;
     height: 50px;
     margin-left: 10px;
@@ -462,7 +465,53 @@ input {
     line-height: 50px;
     color: #507daf;
 }
-
+.result >li{
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 45px;
+    padding-left: 10px;
+    position: relative;
+}
+.result >li::after{
+    content:'';
+    display: block;
+    position: absolute;
+    height:1px;
+    width:100%;
+    background:rgb(243, 244, 245);
+    bottom: 0;
+}
+.result >li >a{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+.result >li >a >i{
+    -webkit-box-flex: 0;
+    flex: 0 0 auto;
+    margin-right: 7px;
+}
+.result >li >a >i.u-svg-search{
+    width: 15px;
+    height: 15px;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNiAyNiI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBmaWxsPSIjYzljOWNhIiBkPSJNMjUuMTgxLDIzLjUzNWwtMS40MTQsMS40MTRsLTcuMzE1LTcuMzE0CgkJQzE0LjcwOSwxOS4xMDcsMTIuNDYsMjAsMTAsMjBDNC40NzcsMjAsMCwxNS41MjMsMCwxMEMwLDQuNDc3LDQuNDc3LDAsMTAsMGM1LjUyMywwLDEwLDQuNDc3LDEwLDEwYzAsMi4zNDItMC44MTEsNC40OS0yLjE2LDYuMTk1CgkJTDI1LjE4MSwyMy41MzV6IE0xMCwyYy00LjQxOCwwLTgsMy41ODItOCw4czMuNTgyLDgsOCw4YzQuNDE4LDAsOC0zLjU4Miw4LThTMTQuNDE4LDIsMTAsMnoiLz48L3N2Zz4=);
+}
+.result > li > span{
+    display: inline-block;
+    -webkit-box-flex: 1;
+    flex: 1;
+    width: 1%;
+    padding-right: 10px;
+    font-size: 15px;
+    line-height: 45px;
+    color: #333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: normal;
+}
 
 
 .searchPage > .hotResearch{

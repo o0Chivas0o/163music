@@ -35,7 +35,7 @@ query.find().then(function (results) {
                                         <use xlink:href="#icon-sq"></use>
                                     </svg>
                                 </i>
-                                ${Song.singer}
+                                ${Song.singer} - ${Song.album}
                                     </p>
                              <i class="playButton">
                                 <svg class="icon" aria-hidden="true">
@@ -73,7 +73,7 @@ query.find().then(function (results) {
                                                     <use xlink:href="#icon-sq"></use>
                                                 </svg>
                                             </i>
-                                            ${Song.singer}
+                                            ${Song.singer} - ${Song.album} 
                                         </div>
                                     </div>
                                     <div class="playbutton">
@@ -99,7 +99,7 @@ query.find().then(function (results) {
                                                     <use xlink:href="#icon-sq"></use>
                                                 </svg>
                                             </i>
-                                            ${Song.singer}
+                                            ${Song.singer} - ${Song.album} 
                                         </div>
                                     </div>
                                     <div class="playbutton">
@@ -131,7 +131,13 @@ $('input#search').on('input',function (e) {
             for(var i=0; i<results.length; i++){
                 let song = results[i].attributes;
                 let li = `
-                    <li data-id="${song.objectId}"> ${song.name} - ${song.singer} </li>
+                    <li data-id="${song.objectId}">
+                     <a href="#">
+                        <i class="u-svg u-svg-search"></i>
+                        <span>
+                         ${song.name} - ${song.singer}
+                        </span>
+                    </li>
                     `;
                 $('#searchResult').append(li)
             }
