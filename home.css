@@ -462,6 +462,7 @@ input {
     font-size: 15px;
     line-height: 50px;
     color: #507daf;
+    border-bottom: 1px solid #f3f4f5;
 }
 
 .searchPage .result >li{
@@ -481,6 +482,7 @@ input {
     width:100%;
     background:rgb(243, 244, 245);
     bottom: 0;
+    left: 32px;
 }
 .searchPage .result >li >a{
     display:flex;
@@ -549,6 +551,10 @@ input {
     transform-origin: top left;
 }
 
+#searchResult div{
+    padding:20px 0;
+    text-align:center;
+}
 
 
 
