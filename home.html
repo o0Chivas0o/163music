@@ -83,7 +83,7 @@
         </section>
     </div>
     <ol class="tabContent">
-        <li class="page-1 active">
+        <li class="page-1">
             <div class="noCollapse">
                 <section class="playLists">
                     <h2 class="sectionTitle">推荐歌单</h2>
@@ -167,7 +167,7 @@
                 </div>
             </div>
         </li>
-        <li class="page-3">
+        <li class="page-3 active">
             <div class="searchPage">
                 <form action="#" method="get" class="seek">
                     <div class="inputCover">
@@ -181,7 +181,7 @@
                 <div class="searchContent">
                     <h3>搜索""</h3>
                 </div>
-                <ol id="searchResult" class="result active">
+                <ol id="searchResult" class="result">
                     <li>
                         <a href="#">
                          <i class="u-svg u-svg-search"></i>
@@ -215,6 +215,30 @@
                         <li>好久不见</li>
                         <li>爱与诚</li>
                     </ul>
+                </div>
+                <div class="hot-list">
+                    <ol id="hot-list">
+                        <li>
+                            <a href="#">
+                                <div class="song-info">
+                                    <div class="hot-cont">
+                                        <div class="hot-title">${Song.name}</div>
+                                        <div class="hot-info">
+                                            <i class="sq">
+                                                <svg class="icon" aria-hidden="true">
+                                                    <use xlink:href="#icon-sq"></use>
+                                                </svg>
+                                            </i>
+                                            ${Song.singer} - ${Song.album}
+                                        </div>
+                                    </div>
+                                    <div class="play-button">
+                                        <span class="btn"></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ol>
                 </div>
             </div>
         </li>

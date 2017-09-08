@@ -275,8 +275,6 @@ section.art >p{
     transform-origin: left top;
 }
 
-.hotcont{
-}
 .hotcont ol >li >a{
     display: flex;
     padding-left: 10px;
@@ -335,7 +333,6 @@ section.art >p{
     text-overflow: ellipsis;
     white-space: nowrap;
     word-break: normal;
-
 }
 .hotcont .songinfo .info .sq{
     display: inline-block;
@@ -449,6 +446,7 @@ input {
 .close .u-svg-empty.active{
     display: inline-block;
 }
+
 .searchPage .searchContent{
     display: none;
 }
@@ -456,7 +454,7 @@ input {
     border-bottom:1px solid #e8e8e8;
     display: block;
 }
-.searchPage .searchContent > h3{
+.searchPage .searchContent >h3{
     position: relative;
     height: 50px;
     margin-left: 10px;
@@ -465,7 +463,8 @@ input {
     line-height: 50px;
     color: #507daf;
 }
-.result >li{
+
+.searchPage .result >li{
     display: -webkit-box;
     display: flex;
     -webkit-box-align: center;
@@ -474,7 +473,7 @@ input {
     padding-left: 10px;
     position: relative;
 }
-.result >li::after{
+.searchPage .result >li::after{
     content:'';
     display: block;
     position: absolute;
@@ -483,22 +482,22 @@ input {
     background:rgb(243, 244, 245);
     bottom: 0;
 }
-.result >li >a{
+.searchPage .result >li >a{
     display:flex;
     justify-content: center;
     align-items:center;
 }
-.result >li >a >i{
+.searchPage .result >li >a >i{
     -webkit-box-flex: 0;
     flex: 0 0 auto;
     margin-right: 7px;
 }
-.result >li >a >i.u-svg-search{
+.searchPage .result >li >a >i.u-svg-search{
     width: 15px;
     height: 15px;
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNiAyNiI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBmaWxsPSIjYzljOWNhIiBkPSJNMjUuMTgxLDIzLjUzNWwtMS40MTQsMS40MTRsLTcuMzE1LTcuMzE0CgkJQzE0LjcwOSwxOS4xMDcsMTIuNDYsMjAsMTAsMjBDNC40NzcsMjAsMCwxNS41MjMsMCwxMEMwLDQuNDc3LDQuNDc3LDAsMTAsMGM1LjUyMywwLDEwLDQuNDc3LDEwLDEwYzAsMi4zNDItMC44MTEsNC40OS0yLjE2LDYuMTk1CgkJTDI1LjE4MSwyMy41MzV6IE0xMCwyYy00LjQxOCwwLTgsMy41ODItOCw4czMuNTgyLDgsOCw4YzQuNDE4LDAsOC0zLjU4Miw4LThTMTQuNDE4LDIsMTAsMnoiLz48L3N2Zz4=);
 }
-.result > li > span{
+.searchPage .result >li >span{
     display: inline-block;
     -webkit-box-flex: 1;
     flex: 1;
@@ -513,20 +512,19 @@ input {
     word-break: normal;
 }
 
-
-.searchPage > .hotResearch{
+.searchPage .hotResearch{
     padding:15px 10px 0;
     margin-top:-1px;
 }
-.searchPage > .hotResearch > h3{
+.searchPage .hotResearch >h3{
     font-size:12px;
     line-height:12px;
     color:#666;
 }
-.searchPage > .hotResearch > ul{
+.searchPage .hotResearch >ul{
     margin:10px 0 7px;
 }
-.searchPage > .hotResearch > ul > li{
+.searchPage .hotResearch >ul >li{
     display:inline-block;
     height:32px;
     margin-right: 4px;
@@ -538,7 +536,7 @@ input {
     position:relative;
     cursor:pointer;
 }
-.searchPage > .hotResearch > ul > li:after{
+.searchPage .hotResearch >ul >li:after{
     content:'';
     width: 200%;
     height: 200%;
@@ -550,3 +548,77 @@ input {
     left: 0;
     transform-origin: top left;
 }
+
+
+
+
+
+
+.hot-list >ol >li >a{
+    display: flex;
+    padding-left: 10px;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+.hot-list .song-info{
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+    border-bottom: 1px solid #f4f4f5;
+}
+.hot-list >ol >li >a .song-info::after{
+    position: absolute;
+    z-index: 2;
+    content: "";
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    -webkit-transform-origin: top left;
+    transform-origin: top left;
+    border: 0 solid rgba(0,0,0,.1);
+}
+.hot-list >ol >li >a .song-info{
+    padding-top:6px;
+    padding-bottom: 7px;
+}
+.song-info .hot-title{
+    font-size: 17px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: normal;
+}
+.song-info .hot-cont .hot-info{
+    font-size: 12px;
+    color: #888;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: normal;
+}
+.song-info .hot-cont .hot-info .sq{
+    display: inline-block;
+    width: 12px;
+    height: 8px;
+    margin-right: 5px;
+    vertical-align: -0.22em;
+}
+.song-info .play-button{
+    display: -webkit-box;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 0 10px;
+}
+.play-button .btn{
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background: url(//s3.music.126.net/m/s/img/index_icon_2x.png?5207a28c3767992ca4bb6d4887c74880) no-repeat;
+    background-size: 166px 97px;
+    background-image:url(//s3.music.126.net/m/s/img/index_icon_3x.png?49a82fee3e0fc602e9c8b25df2bda159);
+    background-position: -24px 0;
+}
+

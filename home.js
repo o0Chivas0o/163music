@@ -138,30 +138,44 @@ query.find().then(function (results) {
 });
 
 //搜索歌曲
+let timer = null; //设置闹钟
+
 $('input#search').on('input',function (e) {
-    let $input = $(e.currentTarget);
-    let value = $input.val().trim();
-    if(value===''){return}
-    var query = new AV.Query('Song');
-    query.contains('name', value);
-    query.find().then(function(results){
-        $('#searchResult').empty();
-        if(results.length === 0){
-            $('#searchResult').html('暂无搜索结果')
-        }else{
-            for(var i=0; i<results.length; i++){
-                let song = results[i].attributes;
-                let li = `
-                    <li data-id="${song.objectId}">
-                     <a href="#">
+    if(timer){window.clearTimeout(timer)}
+    timer = setTimeout(function(){
+        timer = null;
+        let $input = $(e.currentTarget);
+        let value = $input.val().trim();
+        if(value===''){return}
+        var query1 = new AV.Query('Song');
+        query1.contains('name', value);
+        var query2 = new AV.Query('Song');
+        query2.contains('singer', value);
+        var query3 = new AV.Query('Song');
+        query3.contains('album', value);
+        var query4 = new AV.Query('Song');
+        query4.contains('noun', value);
+        var query = AV.Query.or(query1, query2,query3,query4);
+        query.find().then(function(results){
+            $('#searchResult').empty();
+            if(results.length === 0){
+                $('#searchResult').html('暂无搜索结果')
+            }else{
+                for(var i=0; i<results.length; i++){
+                    let song = results[i].attributes;
+                    let li = `
+                    <li data-id="${results[i].id}">
+                     <a href="./song.html?id=${results[i].id}">
                         <i class="u-svg u-svg-search"></i>
                         <span>
                          ${song.name} - ${song.singer}
                         </span>
+                     </a>
                     </li>
                     `;
-                $('#searchResult').append(li)
+                    $('#searchResult').append(li)
+                }
             }
-        }
-    })
+        })
+    },400)
 });
