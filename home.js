@@ -252,6 +252,8 @@ $('#searchResult').on('click','li',function() {
         for (var i = 0; i < results.length; i++) {
             $('#searchResult').hide();
             $('#searchResult').empty();
+            $('#hot-list').empty();
+            $('#hot-list').show();
             let song = results[i].attributes;
             let li = `
                         <li>
