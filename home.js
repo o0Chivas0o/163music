@@ -16,6 +16,27 @@ AV.init({
     appId: APP_ID,
     appKey: APP_KEY
 });
+//首页推荐歌单
+let $olPlayList = $('ol#playList');
+var query = new AV.Query('Playlist');
+query.find().then(function (results) {
+    $('div#loading-img').remove();
+    for (var i = 0; i < results.length; i++) {
+        let Playlist = results[i].attributes;
+        let li = `
+                        <li>
+                            <div class="cover">
+                                <img src="${Playlist.url}" alt="">
+                                <span>${Playlist.hotnumber}</span>
+                            </div>
+                            <p>${Playlist.description}</p>
+                        </li>
+        `;
+        $olPlayList.append(li)
+    }
+}, function (error) {
+        alert('获取歌曲失败')
+});
 
 
 //首页推荐歌曲
@@ -144,4 +165,3 @@ $('input#search').on('input',function (e) {
         }
     })
 });
-
