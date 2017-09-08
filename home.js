@@ -107,7 +107,7 @@ query.find().then(function (results) {
         else {
             let li = `
                     <li>
-                            <a href="#">
+                            <a href="./song.html?id=${results[i].id}">
                                 <div class="number">${i+1}</div>
                                 <div class="songinfo">
                                     <div class="content">
