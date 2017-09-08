@@ -1,5 +1,4 @@
 //tab组件
-
 $('.tabs').on('click','li',function(e){
     var $li = $(e.currentTarget);
     var index = $li.index();
@@ -48,7 +47,7 @@ query.find().then(function (results) {
         let Song = results[i].attributes;
         let li = `
                         <li>
-                          <a href="./play.html?id=">
+                          <a href="./song.html?id=${results[i].id}">
                             <h3>${Song.name}</h3>
                             <p>
                                 <i class="sq">
@@ -82,7 +81,7 @@ query.find().then(function (results) {
         if (i< 9)  {
             let li = `
                     <li>
-                            <a href="#">
+                            <a href="./song.html?id=${results[i].id}">
                                 <div class="number">0${i+1}</div>
                                 <div class="songinfo">
                                     <div class="content">
