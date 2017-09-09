@@ -184,7 +184,7 @@ $('input#search').on('input',function (e) {
 var close = function(){
     $('#search').val('');
     $('.u-svg-empty').removeClass('active');
-    $('#searchResult').empty();
+    $('#searchResult').empty().show();
     $('.hotResearch').show();
     $('.searchContent').hide();
     $('#hot-list').hide()
@@ -242,16 +242,16 @@ $('.hotResearch> ul').on('click', 'li', function (e) {
 });
 
 //显示搜索
-$('#searchResult').on('click','li',function() {
-    $('#search').val($('span.songName').text());
-    var value = $('span.songName').text();
+$('.result').on('click','li',function(e) {
+    let $li = $(e.currentTarget);
+    let index = $li.index();
+    $('#search').val($('.result span').eq(index).text());
+    var value = $('.result span').eq(index).text();
     var query = new AV.Query('Song');
     query.contains('name', value);
     $('.searchContent').hide();
     query.find().then(function (results) {
         for (var i = 0; i < results.length; i++) {
-            $('#searchResult').hide();
-            $('#searchResult').empty();
             $('#hot-list').empty();
             $('#hot-list').show();
             let song = results[i].attributes;
@@ -278,6 +278,8 @@ $('#searchResult').on('click','li',function() {
                         </li>
                      `
             $('#hot-list').append(li)
+
+            $('#searchResult').hide();
         }
     }, function (error) {
     })
