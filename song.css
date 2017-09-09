@@ -1,0 +1,94 @@
+.page{
+    height: 100vh;
+
+}
+.page::before{
+    content:'';
+    height:100%;
+    width: 100%;
+    position: absolute;
+    background: url("//i.loli.net/2017/09/09/59b38e9bab43d.jpg") no-repeat center;
+    background-size:cover;
+    filter: brightness(0.5) blur(40px);
+    z-index: -1;
+}
+
+
+section.disk{
+    padding-top: 80px;
+}
+section.disk .point{
+    position: relative;
+}
+section.disk .point::after{
+    content:'';
+    position: absolute;
+    width: 110px;
+    z-index: 5;
+    height: 157px;
+    top: -80px;
+    left: 45%;
+    background-image: url(//s3.music.126.net/m/s/img/needle-plus.png?994aa910ce3e4d242eb7076620b0e502);
+    background-size:cover;
+}
+
+section.disk .circle{
+    width: 342px;
+    height: 342px;
+    margin:0 auto;
+    position: relative;
+}
+section.disk .circle::before{
+    content:'';
+    position: absolute;
+    top: 0;
+    left:0;
+    width:100%;
+    height: 100%;
+    background: transparent url("//i.loli.net/2017/09/09/59b39277b7fa0.png") no-repeat center;
+    background-size:cover;
+}
+section.disk .circle::after{
+    content:'';
+    position: absolute;
+    top: 0;
+    left:0;
+    width:100%;
+    height: 100%;
+    background: transparent url("//i.loli.net/2017/09/09/59b3928d337e6.png") no-repeat center;
+    background-size:cover;
+}
+section.disk .circle >img{
+    position: absolute;
+    top: 50%;
+    left:50%;
+    margin-top: -106px;
+    margin-left: -106px;
+    border-radius: 50%;
+}
+section.disk .circle.playing >img,
+section.disk .circle.playing::after{
+    animation: spin 15s linear infinite;
+}
+section.disk .circle.playing.pause >img,
+section.disk .circle.playing.pause::after{
+    animation-play-state:paused;
+    -webkit-animation-play-state:paused;
+}
+
+section.lyric{
+
+}
+
+section.actions{
+
+}
+
+@keyframes spin{
+    0%{
+        transform: rotateZ(0deg);
+    }
+    100%{
+        transform: rotateZ(360deg);
+    }
+}

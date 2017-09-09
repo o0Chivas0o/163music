@@ -7,14 +7,7 @@ $('.tabs').on('click','li',function(e){
 });
 
 
-//AV.js
-var APP_ID = 'Eix3vKYRx3siO2vV8s30yAPG-gzGzoHsz';
-var APP_KEY = '24qwRAbG2s0ei8lLEwd8z1wi';
 
-AV.init({
-    appId: APP_ID,
-    appKey: APP_KEY
-});
 //首页推荐歌单
 let $olPlayList = $('ol#playList');
 var query = new AV.Query('Playlist');
@@ -209,11 +202,15 @@ $('.hotResearch> ul').on('click', 'li', function (e) {
     $('.u-svg-empty').addClass('active');
     $('#searchResult').empty();
     query.find().then(function (results){
-        for (var i = 0; i<results.length; i++){
+        for (var i = 0; i<results.length; i++) {
             $('#hot-list').empty();
             $('#hot-list').show();
-            let song = results[i].attributes;
-            let li =`
+            if (results.length === 0) {
+                $('#searchResult').html('<div>暂无搜索结果</div>')
+                $('.searchContent').hide()
+            } else {
+                let song = results[i].attributes;
+                let li = `
                     <li>
                             <a href="./song.html?id=${results[i].id}">
                                 <div class="song-info">
@@ -235,55 +232,56 @@ $('.hotResearch> ul').on('click', 'li', function (e) {
                             </a>
                         </li>
                  `;
-            $('#hot-list').append(li)
+                $('#hot-list').append(li)
+            }
         }
     }, function (error) {
     })
 });
 
 //显示搜索
-$('.result').on('click','li',function(e) {
-    let $li = $(e.currentTarget);
-    let index = $li.index();
-    $('#search').val($('.result span').eq(index).text());
-    var value = $('.result span').eq(index).text();
-    var query = new AV.Query('Song');
-    query.contains('name', value);
-    $('.searchContent').hide();
-    query.find().then(function (results) {
-        for (var i = 0; i < results.length; i++) {
-            $('#hot-list').empty();
-            $('#hot-list').show();
-            let song = results[i].attributes;
-            let li = `
-                        <li>
-                            <a href="./song.html?id=${results[i].id}">
-                                <div class="song-info">
-                                    <div class="hot-cont">
-                                        <div class="hot-title">${song.name}</div>
-                                        <div class="hot-info">
-                                            <i class="sq">
-                                                <svg class="icon" aria-hidden="true">
-                                                    <use xlink:href="#icon-sq"></use>
-                                                </svg>
-                                            </i>
-                                            ${song.singer} - ${song.album}
-                                        </div>
-                                    </div>
-                                    <div class="play-button">
-                                        <span class="btn"></span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                     `
-            $('#hot-list').append(li)
-
-            $('#searchResult').hide();
-        }
-    }, function (error) {
-    })
-});
+// $('.result').on('click','li',function(e) {
+//     let $li = $(e.currentTarget);
+//     let index = $li.index();
+//     $('#search').val($('.result span').eq(index).text());
+//     var value = $('.result span').eq(index).text();
+//     var query = new AV.Query('Song');
+//     query.contains('name', value);
+//     $('.searchContent').hide();
+//     query.find().then(function (results) {
+//         for (var i = 0; i < results.length; i++) {
+//             $('#hot-list').empty();
+//             $('#hot-list').show();
+//             let song = results[i].attributes;
+//             let li = `
+//                         <li>
+//                             <a href="./song.html?id=${results[i].id}">
+//                                 <div class="song-info">
+//                                     <div class="hot-cont">
+//                                         <div class="hot-title">${song.name}</div>
+//                                         <div class="hot-info">
+//                                             <i class="sq">
+//                                                 <svg class="icon" aria-hidden="true">
+//                                                     <use xlink:href="#icon-sq"></use>
+//                                                 </svg>
+//                                             </i>
+//                                             ${song.singer} - ${song.album}
+//                                         </div>
+//                                     </div>
+//                                     <div class="play-button">
+//                                         <span class="btn"></span>
+//                                     </div>
+//                                 </div>
+//                             </a>
+//                         </li>
+//                      `
+//             $('#hot-list').append(li)
+//
+//             $('#searchResult').hide();
+//         }
+//     }, function (error) {
+//     })
+// });
 
 /*热门歌曲列表*/
 $('.hot-list > ol').on('click', 'li', function () {
