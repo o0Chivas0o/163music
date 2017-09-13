@@ -44,7 +44,8 @@ query.get(id).then(function (song) {
     audio.addEventListener('ended',function(){
         $('.circle').removeClass('playing')
         $('.pointer').addClass('pause')
-        $('.zanting').addClass('active')
+        $('.zanting').removeClass('active')
+        $('.bofang').removeClass('active')
     },false)
     let array = []
     let parts = lyric.split('\n')
