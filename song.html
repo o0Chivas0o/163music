@@ -16,12 +16,12 @@
     </section>
     <section class="disk">
         <div class="circle">
-            <div class="bofang active">
+            <div class="bofang">
                 <svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-bofang"></use>
             </svg>
             </div>
-            <div class="zanting active">
+            <div class="zanting">
                 <svg class="icon" aria-hidden="true">
                     <use xlink:href="#icon-zanting"></use>
                 </svg>
@@ -72,9 +72,8 @@
         $('.lyric > .name').append(h2)
         let audio = document.createElement('audio')
         audio.src = url
-        audio.play()
         $('body').append(audio)
-        $('.circle').addClass('playing').remove('pause')
+        $('.pointer').addClass('pause')
         $('.bofang').on('click',function(){
             audio.play()
             $('.circle').addClass('playing').removeClass('pause')
