@@ -148,6 +148,7 @@
         text-align:center;
         z-index:3;
         margin-top: 80px;
+        margin-bottom: 27px;
     }
     .actions > a{
         color:#d43b32;
@@ -304,6 +305,7 @@
 
     .actions{
         margin-top: 60px;
+        margin-bottom: 15px;
         text-align:center;
         z-index:3;
     }
