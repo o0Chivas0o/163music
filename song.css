@@ -143,12 +143,9 @@
     }
 
     .actions{
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 27px;
         text-align:center;
         z-index:3;
+        margin-top: 80px;
     }
     .actions > a{
         color:#d43b32;
@@ -282,10 +279,7 @@
     }
 
     .actions{
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 17px;
+        margin-top: 60px;
         text-align:center;
         z-index:3;
     }
@@ -295,7 +289,7 @@
         padding: 4px 35px;
         border-radius: 4px;
         text-align:center;
-        font-size:18px;
+        font-size:16px;
         line-height: 40px;
     }
     .actions > .a1{
