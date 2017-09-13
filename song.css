@@ -109,7 +109,6 @@ section.lyric{
     padding:0 35px;
     margin-top:25px;
     overflow: hidden;
-    height: 106px;
 }
 .lyric .name {
     display: flex;
