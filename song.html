@@ -64,7 +64,6 @@
         let name =song.attributes.name
         let img = `<img class="cover" src="${cover}" alt="封面图片">`
         let {url,lyric} = song.attributes
-        let video = document.createElement('video')
         $('.circle').append(img)
         $('.bg').css('background-image',`url(${cover})`,'background-size',`cover`)
         let h2 = `<h2>${name} - ${singer}</h2>`
