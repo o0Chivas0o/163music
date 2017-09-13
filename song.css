@@ -1,42 +1,48 @@
 .page{
     height: 100vh;
-
 }
-.page::before{
+.page .bg{
     content:'';
     height:100%;
     width: 100%;
     position: absolute;
-    background: url("//i.loli.net/2017/09/09/59b38e9bab43d.jpg") no-repeat center;
-    background-size:cover;
     filter: brightness(0.5) blur(40px);
     z-index: -1;
 }
 
+.pointer{
+    position:absolute;
+    top:0;
+    left:50%;
+    transform:translateX(-15%);
+    z-index:99;
+}
+.pointer img{
+    width: 110px;
+    height: 157px;
+    transform-origin: 7% -2%;
+    transition: transform 0.6s;
+    transform: rotate(0deg);
+}
+.pointer.pause img{
+    transform-origin: 7% -2%;
+    transition: transform 0.6s;
+    transform: rotateZ(-25deg);
+}
 
 section.disk{
     padding-top: 80px;
 }
-section.disk .point{
-    position: relative;
-}
-section.disk .point::after{
-    content:'';
-    position: absolute;
-    width: 110px;
-    z-index: 5;
-    height: 157px;
-    top: -80px;
-    left: 45%;
-    background-image: url(//s3.music.126.net/m/s/img/needle-plus.png?994aa910ce3e4d242eb7076620b0e502);
-    background-size:cover;
-}
+
 
 section.disk .circle{
     width: 342px;
     height: 342px;
     margin:0 auto;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 section.disk .circle::before{
     content:'';
@@ -75,13 +81,92 @@ section.disk .circle.playing.pause::after{
     animation-play-state:paused;
     -webkit-animation-play-state:paused;
 }
-
-section.lyric{
-
+.disk .bofang,
+.disk .zanting{
+    z-index: 1;
+}
+.disk .bofang.active{
+    display: none;
+}
+.disk .bofang{
+    display: block;
+}
+.disk .zanting.active{
+    display: block;
+}
+.disk .zanting{
+    display: none;
+}
+.disk .circle .bofang >svg,
+.disk .circle .zanting >svg{
+    height: 65px;
+    width: 65px;
+    fill: #fff;
 }
 
-section.actions{
 
+section.lyric{
+    padding:0 35px;
+    margin-top:25px;
+    overflow: hidden;
+    height: 106px;
+}
+.lyric .name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    color:#fefefe;
+    line-height:1.5;
+    overflow: hidden;
+}
+.lyric .name >h2{
+    font-size: 18px;
+}
+.lyric .songLyric{
+    margin-top:6px;
+    height:99px;
+    overflow: hidden;
+    text-align:center;
+}
+.lyric >.songLyric >.lines{
+    transition:transform 0.3s;
+}
+.lyric >.songLyric >.lines >p{
+    color:#aeabac;
+    margin-bottom: 5px;
+    font-size:16px;
+}
+.lyric >.songLyric >.lines >.active{
+    color:white;
+}
+
+
+.actions{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 27px;
+    text-align:center;
+    z-index:3;
+}
+.actions > a{
+    color:#d43b32;
+    height:47px;
+    padding: 8px 55px;
+    border-radius: 4px;
+    text-align:center;
+    font-size:20px;
+    line-height: 47px;
+}
+.actions > .a1{
+    border:1px solid #d43b32;
+}
+.actions > .a2{
+    border:1px solid #d43b32;
+    background:#d43b32;
+    color:white;
+    margin-left:7px;
 }
 
 @keyframes spin{
