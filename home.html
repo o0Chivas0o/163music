@@ -5,15 +5,13 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-touch-fullscreen" content="yes" />
-    <meta http-equiv="Cache-Control" content="no-siteapp" />
-    <link rel="stylesheet" href="./home.css">
-    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./src/home.css">
+    <link rel="stylesheet" href="./src/reset.css">
     <link rel="shortcut icon" href="./music.ico">
     <title>网易云音乐手机端</title>
 </head>
 <body>
-<div class="page">
+<div class="page tabs">
     <div class="sticky">
         <section class="topbar">
             <div class="logo">
@@ -72,7 +70,7 @@
             <a href="#">下载APP</a>
         </section>
         <section class="golbalTabs">
-            <ol class="tabs">
+            <ol class="tabs-nav">
                 <li class="active">
                     <div class="text">推荐音乐</div>
                 </li>
@@ -210,8 +208,5 @@
 </div>
 </body>
 <script src="//at.alicdn.com/t/font_404141_fphqseaymqfzjjor.js"></script>
-<script src="./vandors/jquery.min.js"></script>
-<script src="./vandors/av-min.js"></script>
-<script src="./scripts/AV.js"></script>
-<script src="./home.js"></script>
+<script data-main="src/main" src="vendors/require.js"></script>
 </html>
