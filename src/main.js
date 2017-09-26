@@ -1,7 +1,6 @@
 requirejs .config({
   paths: {
-    jquery: '../vendors/jquery.min',
-    av: '../vendors/av-min'
+    jquery: '../vendors/jquery.min'
   }
 })
 
@@ -15,3 +14,6 @@ function (avReset, tabs, loadSongs, loadPage, loadHotSongs, search) {
   loadHotSongs()
   search()
 })
+
+import '../home.css'
+import '../reset.css'

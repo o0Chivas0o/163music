@@ -1,5 +1,5 @@
 // 首页推荐歌曲
-define(['jquery', 'av'], function ($, AV) {
+define(['jquery', '../vendors/av-min.js'], function ($, AV) {
   function loadSongs () {
     getSongs().then(fillSongs, function (error) {
       alert('获取歌曲失败')

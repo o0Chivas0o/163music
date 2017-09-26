@@ -1,5 +1,5 @@
 // 热歌榜 Page-2
-define(['jquery', 'av'], function ($, AV) {
+define(['jquery', '../vendors/av-min.js'], function ($, AV) {
   function loadHotSongs () {
     getHotSongs().then(fillHotSongs, function (error) {
       alert('获取歌曲失败')

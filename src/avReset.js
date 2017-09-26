@@ -1,5 +1,5 @@
-// 初始化AV  
-define(['av'], function (AV) {
+// 初始化AV
+define(['../vendors/av-min.js'], function (AV) {
   return function () {
     let APP_ID = 'Eix3vKYRx3siO2vV8s30yAPG-gzGzoHsz'
     let APP_KEY = '24qwRAbG2s0ei8lLEwd8z1wi'
