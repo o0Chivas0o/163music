@@ -1,5 +1,5 @@
 // 封装close
-define(['jquery','av'],function($,AV){
+define(['jquery','../vendors/av-min.js'],function($,AV){
   let close = function () {
     $('#search').val('')
     $('.u-svg-empty').removeClass('active')

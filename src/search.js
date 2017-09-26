@@ -1,4 +1,4 @@
-define(['jquery', 'av'], function ($, AV) {
+define(['jquery', '../vendors/av-min.js'], function ($, AV) {
   // 搜索歌曲
   let timer = null // 设置闹钟
 
