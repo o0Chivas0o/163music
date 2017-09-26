@@ -1,7 +1,6 @@
 {
   "name": "163music",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,6 +9,27 @@
   "license": "ISC",
   "dependencies": {
     "jquery": "^3.2.1",
-    "leancloud-storage": "^3.1.1"
-  }
+    "leancloud-storage": "^3.1.1",
+    "requirejs": "^2.3.5"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.6.0",
+    "eslint": "^4.7.2",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-react": "^7.3.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "webpack": "^3.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/o0Chivas0o/163music.git"
+  },
+  "bugs": {
+    "url": "https://github.com/o0Chivas0o/163music/issues"
+  },
+  "homepage": "https://github.com/o0Chivas0o/163music#readme",
+  "description": ""
 }

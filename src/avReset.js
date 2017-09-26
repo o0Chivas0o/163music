@@ -1,4 +1,4 @@
-// 初始化AV.js
+// 初始化AV  
 define(['av'], function (AV) {
   return function () {
     let APP_ID = 'Eix3vKYRx3siO2vV8s30yAPG-gzGzoHsz'
